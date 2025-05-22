@@ -104,7 +104,7 @@
           "prioritizers" : [ ],
           "selectedRelationships" : [ "matched" ],
           "source" : {
-            "comments" : "",
+            "comments" : "new",
             "groupId" : "404e2c9e-9fb3-337b-bf9e-e532a449d36e",
             "id" : "51ed0534-ba6f-3f7e-8538-6fbd6240e702",
             "instanceIdentifier" : "51ed0534-ba6f-3f7e-5612-614efc65f232",
@@ -118,7 +118,7 @@
           "bends" : [ ],
           "componentType" : "CONNECTION",
           "destination" : {
-            "comments" : "",
+            "comments" : "new",
             "groupId" : "404e2c9e-9fb3-337b-bf9e-e532a449d36e",
             "id" : "51ed0534-ba6f-3f7e-8538-6fbd6240e702",
             "instanceIdentifier" : "51ed0534-ba6f-3f7e-5612-614efc65f232",
@@ -573,7 +573,7 @@
             "group" : "org.apache.nifi",
             "version" : "1.24.0"
           },
-          "comments" : "",
+          "comments" : "new",
           "componentType" : "PROCESSOR",
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
