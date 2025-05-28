@@ -1,0 +1,421 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : {
+        "14bf0a7c-f88b-3558-95bf-295590a55172" : {
+          "identifier" : "14bf0a7c-f88b-3558-95bf-295590a55172",
+          "name" : "rds_sql_into_csv_writer"
+        },
+        "9a99535d-3957-34a9-92cf-df6ef446581e" : {
+          "identifier" : "9a99535d-3957-34a9-92cf-df6ef446581e",
+          "name" : "StandardOauth2AccessTokenProvider"
+        }
+      },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+            "id" : "028f317a-45fe-3d3d-9c5e-c4c2a8da0a90",
+            "instanceIdentifier" : "113d4c42-0197-1000-aefd-aba60e47a1b0",
+            "name" : "JoltTransformJSON",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+          "identifier" : "5c38a154-db40-313e-a1a2-796ad43d0d22",
+          "instanceIdentifier" : "11445d40-0197-1000-aad4-26409857913c",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+            "id" : "bd52e5ff-7b1d-3263-ad49-1c8eb519a144",
+            "instanceIdentifier" : "1016f2bf-0197-1000-4450-77785a2f9316",
+            "name" : "QuerySalesforceObject",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+            "id" : "e6852e67-5922-3617-afe2-55d61f2fc530",
+            "instanceIdentifier" : "114482fa-0197-1000-e971-c4386948551c",
+            "name" : "PutFile",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+          "identifier" : "d05275e1-22cd-3ba4-9452-f509631ff867",
+          "instanceIdentifier" : "11449c78-0197-1000-3a37-2734c8294d65",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+            "id" : "028f317a-45fe-3d3d-9c5e-c4c2a8da0a90",
+            "instanceIdentifier" : "113d4c42-0197-1000-aefd-aba60e47a1b0",
+            "name" : "JoltTransformJSON",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ ],
+        "defaultBackPressureDataSizeThreshold" : "1 GB",
+        "defaultBackPressureObjectThreshold" : 10000,
+        "defaultFlowFileExpiration" : "0 sec",
+        "flowFileConcurrency" : "UNBOUNDED",
+        "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+        "funnels" : [ ],
+        "identifier" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+        "inputPorts" : [ ],
+        "instanceIdentifier" : "1011a23a-0197-1000-44bb-096ba237fdb2",
+        "labels" : [ ],
+        "name" : "salceforce_connect",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 448.0,
+          "y" : -96.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ "original", "failure" ],
+          "backoffMechanism" : "PENALIZE_FLOWFILE",
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-salesforce-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.24.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+          "identifier" : "bd52e5ff-7b1d-3263-ad49-1c8eb519a144",
+          "instanceIdentifier" : "1016f2bf-0197-1000-4450-77785a2f9316",
+          "maxBackoffPeriod" : "10 mins",
+          "name" : "QuerySalesforceObject",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 576.0,
+            "y" : -24.0
+          },
+          "properties" : {
+            "read-timeout" : "15 s",
+            "query-type" : "custom-query",
+            "field-names" : "customer_id__c, customer_name__c",
+            "record-writer" : "14bf0a7c-f88b-3558-95bf-295590a55172",
+            "sobject-name" : "customer_c",
+            "salesforce-api-version" : "60.0",
+            "salesforce-url" : "https://orgfarm-00765ec0c9-dev-ed.develop.my.salesforce.com/",
+            "custom-soql-query" : "SELECT \n\tcustomer_id__c,\n\tcustomer_name__c,\n\tcustomer_phone__c\n FROM customer_c__c\n",
+            "create-zero-record-files" : "false",
+            "oauth2-access-token-provider" : "9a99535d-3957-34a9-92cf-df6ef446581e"
+          },
+          "propertyDescriptors" : {
+            "age-delay" : {
+              "displayName" : "Age Delay",
+              "identifiesControllerService" : false,
+              "name" : "age-delay",
+              "sensitive" : false
+            },
+            "read-timeout" : {
+              "displayName" : "Read Timeout",
+              "identifiesControllerService" : false,
+              "name" : "read-timeout",
+              "sensitive" : false
+            },
+            "initial-age-filter" : {
+              "displayName" : "Initial Age Start Time",
+              "identifiesControllerService" : false,
+              "name" : "initial-age-filter",
+              "sensitive" : false
+            },
+            "query-type" : {
+              "displayName" : "Query Type",
+              "identifiesControllerService" : false,
+              "name" : "query-type",
+              "sensitive" : false
+            },
+            "field-names" : {
+              "displayName" : "Field Names",
+              "identifiesControllerService" : false,
+              "name" : "field-names",
+              "sensitive" : false
+            },
+            "record-writer" : {
+              "displayName" : "Record Writer",
+              "identifiesControllerService" : true,
+              "name" : "record-writer",
+              "sensitive" : false
+            },
+            "custom-where-condition" : {
+              "displayName" : "Custom WHERE Condition",
+              "identifiesControllerService" : false,
+              "name" : "custom-where-condition",
+              "sensitive" : false
+            },
+            "sobject-name" : {
+              "displayName" : "sObject Name",
+              "identifiesControllerService" : false,
+              "name" : "sobject-name",
+              "sensitive" : false
+            },
+            "salesforce-api-version" : {
+              "displayName" : "API Version",
+              "identifiesControllerService" : false,
+              "name" : "salesforce-api-version",
+              "sensitive" : false
+            },
+            "salesforce-url" : {
+              "displayName" : "Salesforce Instance URL",
+              "identifiesControllerService" : false,
+              "name" : "salesforce-url",
+              "sensitive" : false
+            },
+            "custom-soql-query" : {
+              "displayName" : "Custom SOQL Query",
+              "identifiesControllerService" : false,
+              "name" : "custom-soql-query",
+              "sensitive" : false
+            },
+            "create-zero-record-files" : {
+              "displayName" : "Create Zero Record FlowFiles",
+              "identifiesControllerService" : false,
+              "name" : "create-zero-record-files",
+              "sensitive" : false
+            },
+            "oauth2-access-token-provider" : {
+              "displayName" : "OAuth2 Access Token Provider",
+              "identifiesControllerService" : true,
+              "name" : "oauth2-access-token-provider",
+              "sensitive" : false
+            },
+            "age-field" : {
+              "displayName" : "Age Field",
+              "identifiesControllerService" : false,
+              "name" : "age-field",
+              "sensitive" : false
+            }
+          },
+          "retriedRelationships" : [ ],
+          "retryCount" : 10,
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "1 min",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.salesforce.QuerySalesforceObject",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure" ],
+          "backoffMechanism" : "PENALIZE_FLOWFILE",
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.24.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+          "identifier" : "028f317a-45fe-3d3d-9c5e-c4c2a8da0a90",
+          "instanceIdentifier" : "113d4c42-0197-1000-aefd-aba60e47a1b0",
+          "maxBackoffPeriod" : "10 mins",
+          "name" : "JoltTransformJSON",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 576.0,
+            "y" : 184.0
+          },
+          "properties" : {
+            "jolt-spec" : "[\n  {\n    \"operation\": \"shift\",\n    \"spec\": {\n      \"0\": {\n        \"customer_id__c\": \"customer_id__c\",\n        \"customer_name__c\": \"customer_name__c\"\n      }\n    }\n  }\n]\n",
+            "jolt-transform" : "jolt-transform-chain",
+            "Max String Length" : "20 MB",
+            "pretty_print" : "false",
+            "Transform Cache Size" : "1"
+          },
+          "propertyDescriptors" : {
+            "jolt-spec" : {
+              "displayName" : "Jolt Specification",
+              "identifiesControllerService" : false,
+              "name" : "jolt-spec",
+              "resourceDefinition" : {
+                "cardinality" : "SINGLE",
+                "resourceTypes" : [ "FILE", "TEXT" ]
+              },
+              "sensitive" : false
+            },
+            "jolt-transform" : {
+              "displayName" : "Jolt Transformation DSL",
+              "identifiesControllerService" : false,
+              "name" : "jolt-transform",
+              "sensitive" : false
+            },
+            "jolt-custom-class" : {
+              "displayName" : "Custom Transformation Class Name",
+              "identifiesControllerService" : false,
+              "name" : "jolt-custom-class",
+              "sensitive" : false
+            },
+            "jolt-custom-modules" : {
+              "displayName" : "Custom Module Directory",
+              "identifiesControllerService" : false,
+              "name" : "jolt-custom-modules",
+              "resourceDefinition" : {
+                "cardinality" : "MULTIPLE",
+                "resourceTypes" : [ "FILE", "DIRECTORY" ]
+              },
+              "sensitive" : false
+            },
+            "Max String Length" : {
+              "displayName" : "Max String Length",
+              "identifiesControllerService" : false,
+              "name" : "Max String Length",
+              "sensitive" : false
+            },
+            "pretty_print" : {
+              "displayName" : "Pretty Print",
+              "identifiesControllerService" : false,
+              "name" : "pretty_print",
+              "sensitive" : false
+            },
+            "Transform Cache Size" : {
+              "displayName" : "Transform Cache Size",
+              "identifiesControllerService" : false,
+              "name" : "Transform Cache Size",
+              "sensitive" : false
+            }
+          },
+          "retriedRelationships" : [ ],
+          "retryCount" : 10,
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.JoltTransformJSON",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "backoffMechanism" : "PENALIZE_FLOWFILE",
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.24.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "8ef64710-6410-37d5-9f3d-c99c05bc9dbd",
+          "identifier" : "e6852e67-5922-3617-afe2-55d61f2fc530",
+          "instanceIdentifier" : "114482fa-0197-1000-e971-c4386948551c",
+          "maxBackoffPeriod" : "10 mins",
+          "name" : "PutFile",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 1088.0,
+            "y" : 184.0
+          },
+          "properties" : {
+            "Create Missing Directories" : "true",
+            "Conflict Resolution Strategy" : "fail"
+          },
+          "propertyDescriptors" : {
+            "Group" : {
+              "displayName" : "Group",
+              "identifiesControllerService" : false,
+              "name" : "Group",
+              "sensitive" : false
+            },
+            "Owner" : {
+              "displayName" : "Owner",
+              "identifiesControllerService" : false,
+              "name" : "Owner",
+              "sensitive" : false
+            },
+            "Create Missing Directories" : {
+              "displayName" : "Create Missing Directories",
+              "identifiesControllerService" : false,
+              "name" : "Create Missing Directories",
+              "sensitive" : false
+            },
+            "Permissions" : {
+              "displayName" : "Permissions",
+              "identifiesControllerService" : false,
+              "name" : "Permissions",
+              "sensitive" : false
+            },
+            "Maximum File Count" : {
+              "displayName" : "Maximum File Count",
+              "identifiesControllerService" : false,
+              "name" : "Maximum File Count",
+              "sensitive" : false
+            },
+            "Last Modified Time" : {
+              "displayName" : "Last Modified Time",
+              "identifiesControllerService" : false,
+              "name" : "Last Modified Time",
+              "sensitive" : false
+            },
+            "Directory" : {
+              "displayName" : "Directory",
+              "identifiesControllerService" : false,
+              "name" : "Directory",
+              "sensitive" : false
+            },
+            "Conflict Resolution Strategy" : {
+              "displayName" : "Conflict Resolution Strategy",
+              "identifiesControllerService" : false,
+              "name" : "Conflict Resolution Strategy",
+              "sensitive" : false
+            }
+          },
+          "retriedRelationships" : [ ],
+          "retryCount" : 10,
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.PutFile",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { },
+      "parameterProviders" : { }
+    }
+  }
+}
