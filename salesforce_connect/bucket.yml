@@ -1,6 +1,6 @@
 flows:
-  7bd692b9-e61a-4b01-9386-38e046251a59: {ver: 1, file: salesforce_connect.snapshot,
-    comments: '', author: anonymous, created: 1748428967891, flowName: salesforce_connect,
-    flowDesc: ''}
+  7bd692b9-e61a-4b01-9386-38e046251a59: {ver: 2, file: salesforce_connect.snapshot,
+    comments: remove put_file_processor, author: anonymous, created: 1748429008230,
+    flowName: salesforce_connect, flowDesc: ''}
 layoutVer: 1
 bucketId: 41ed75e1-f75b-411d-8ba1-d81c3c0f691e
