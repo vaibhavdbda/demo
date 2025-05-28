@@ -1,7 +1,7 @@
 flows:
-  caddc87e-18bc-48e5-bbfb-abf2b9683b8d: {ver: 1, file: salceforce_connect.snapshot,
-    comments: '', author: anonymous, created: 1748428648237, flowName: salceforce_connect,
-    flowDesc: ''}
+  caddc87e-18bc-48e5-bbfb-abf2b9683b8d: {ver: 2, file: salceforce_connect.snapshot,
+    comments: putfile processor added, author: anonymous, created: 1748428753129,
+    flowName: salceforce_connect, flowDesc: ''}
   cadea7b6-ede5-42d4-8823-a83960057331: {ver: 1, file: loading_115_tables.snapshot,
     comments: '', author: anonymous, created: 1748428076448, flowName: loading_115_tables,
     flowDesc: ''}
